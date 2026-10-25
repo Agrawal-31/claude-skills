@@ -1,0 +1,3 @@
+item,owner,channel,listing_status,list_price,floor,platform_suggested,status,sold_price,buyer_ref,sold_date,ship_by,carrier,label_ready,box,shipped_date,paid_out,notes
+Example: compact camera with spare battery,me,eBay,Draft,120,100,95,Available,,,,,,,,,,"Battery health checked; charger included"
+Example: pair of running shoes,partner,Vinted,Live,35,25,,Sold,28,(private),2026-03-02,2026-03-07,InPost,yes,35x25x15,,no,"Accepted offer"

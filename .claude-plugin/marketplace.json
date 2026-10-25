@@ -1,0 +1,31 @@
+{
+  "name": "agrawal-claude-skills",
+  "owner": { "name": "Shishir Agrawal" },
+  "metadata": {
+    "description": "Agent Skills by Shishir Agrawal. Each one is a separate plugin, so install only what you need.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "sell-my-stuff",
+      "description": "Find what you own from email receipts and sell it on eBay and Vinted (UK), from pricing and listings to postage and buyer issues.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/sell-my-stuff"]
+    },
+    {
+      "name": "uk-personal-tax",
+      "description": "UK Self Assessment, PAYE refunds, leaving the UK, foreign income, crypto, RSUs and Overseas Workday Relief, with a tested calculator.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/uk-personal-tax"]
+    },
+    {
+      "name": "india-income-tax",
+      "description": "File and e-verify an Indian ITR, especially as an NRI: residency, ITR form, AIS reconciliation, capital gains, DTAA and Form 67, missed deadlines.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/india-income-tax"]
+    }
+  ]
+}
