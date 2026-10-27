@@ -1,0 +1,20 @@
+[
+  {"query": "Help me file my Indian income tax return, I live in the UK now", "should_trigger": true},
+  {"query": "Am I NRI or RNOR this year? I came back to India for 4 months", "should_trigger": true},
+  {"query": "which ITR form do I use if I have capital gains from mutual funds", "should_trigger": true},
+  {"query": "I missed the ITR deadline, what's the late fee?", "should_trigger": true},
+  {"query": "How do I claim DTAA relief on my Indian interest?", "should_trigger": true},
+  {"query": "My AIS shows a sale I don't recognise, what do I do before filing?", "should_trigger": true},
+  {"query": "Old regime vs new regime, which is better for me with 80C and HRA?", "should_trigger": true},
+  {"query": "I got a 143(1) intimation with a demand, what does it mean?", "should_trigger": true},
+  {"query": "How do I fill Schedule FA for my foreign bank account?", "should_trigger": true},
+  {"query": "Do I pay Indian tax on NRE account interest?", "should_trigger": true},
+  {"query": "How do I file my UK Self Assessment for foreign income?", "should_trigger": false},
+  {"query": "Register my company for GST in India", "should_trigger": false},
+  {"query": "How do I open an NRE account with an Indian bank?", "should_trigger": false},
+  {"query": "What's the best mutual fund to invest in for 10 years?", "should_trigger": false},
+  {"query": "Apply for a PAN card for my child", "should_trigger": false},
+  {"query": "Calculate TDS to deduct on my contractor's invoices for my business", "should_trigger": false},
+  {"query": "How does US tax treat my Indian property sale?", "should_trigger": false},
+  {"query": "Convert ₹5 lakh to pounds at today's rate", "should_trigger": false}
+]

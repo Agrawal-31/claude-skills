@@ -1,0 +1,20 @@
+[
+  {"query": "Do I need to file a Self Assessment this year? I just have a salary and some share sales", "should_trigger": true},
+  {"query": "My tax code changed to 0T on my new job, am I being overtaxed?", "should_trigger": true},
+  {"query": "I'm leaving the UK in December, how do I get my tax refund?", "should_trigger": true},
+  {"query": "Where do I put RSU sales on the HMRC return?", "should_trigger": true},
+  {"query": "Can I claim overseas workday relief for my trips abroad for work?", "should_trigger": true},
+  {"query": "I got a P800 saying I underpaid £1,400, is that right?", "should_trigger": true},
+  {"query": "How do I declare interest from my Indian bank account to HMRC?", "should_trigger": true},
+  {"query": "earn 130k, how much tax will I pay and can a pension contribution help", "should_trigger": true},
+  {"query": "Which software can file the SA109 residence pages?", "should_trigger": true},
+  {"query": "Should I claim the FIG regime this year?", "should_trigger": true},
+  {"query": "How do I file my Indian ITR as an NRI?", "should_trigger": false},
+  {"query": "Work out VAT on my limited company's invoices", "should_trigger": false},
+  {"query": "Help me set up payroll for my two employees", "should_trigger": false},
+  {"query": "What's the US federal tax bracket for $120k?", "should_trigger": false},
+  {"query": "Write a Python function to calculate compound interest", "should_trigger": false},
+  {"query": "Prepare corporation tax accounts for my startup", "should_trigger": false},
+  {"query": "Is it a good time to buy a house in London?", "should_trigger": false},
+  {"query": "Explain how council tax bands work", "should_trigger": false}
+]

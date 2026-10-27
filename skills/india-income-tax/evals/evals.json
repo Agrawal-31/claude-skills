@@ -1,0 +1,85 @@
+{
+  "skill_name": "india-income-tax",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I moved from India to Canada in 2019 and visit once or twice a year. I sold some mutual funds in FY 2025-26. Do I need to file an Indian return, and which form?",
+      "expected_output": "Pins the year, determines residential status from the person's trip estimates, and chooses the ITR form and regime.",
+      "files": [],
+      "expectations": [
+        "States both FY 2025-26 and AY 2026-27 and checks the person means that year",
+        "Asks for approximate India trips and lengths per year instead of searching the mailbox for travel evidence",
+        "Uses scripts/residency_days.py or the residency rules to reach a status",
+        "Reaches Non-Resident given the facts, and explains the deciding test",
+        "Says a non-resident cannot use ITR-1 and points to ITR-2 for capital gains",
+        "Notes that non-residents get no 87A rebate"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I missed the 31 July deadline for my ITR. What are my options now and what will it cost?",
+      "expected_output": "The belated-return route and its costs, the updated-return fallback, quantified with the calculator.",
+      "files": [],
+      "expectations": [
+        "Checks whether the return is actually late for the person's form",
+        "Explains a belated return under section 139(4) is possible until 31 December of the AY",
+        "States the 234F fee (₹5,000, or ₹1,000 if total income is up to ₹5 lakh)",
+        "Explains 234A interest and, if relevant, 234B/234C",
+        "Says a belated return is locked into the new regime",
+        "Mentions ITR-U as the later fallback and that it cannot claim a refund",
+        "Quantifies the cost with scripts/india_tax_calc.py"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "The Schedule 112A CSV upload on the e-filing portal keeps failing with common.errors.csv_row_skip. Here are my fund sales.",
+      "expected_output": "A complete, ready-to-upload 112A file in the format the portal accepts, with instructions on existing rows.",
+      "files": [],
+      "expectations": [
+        "Explains post-31 Jan 2018 holdings go in one consolidated row (ISIN INNOTREQUIRD, name CONSOLIDATED)",
+        "Uses whole rupees",
+        "Keeps separate rows for pre-Feb-2018 holdings with grandfathered cost",
+        "Delivers the complete file, not a partial patch",
+        "Says which existing rows to delete before uploading",
+        "Uses scripts/schedule_112a_helper.py"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I'm in the UK. When I add my tax challan on the portal it says 'Date of Deposit cannot be more than System Date'. I paid it last night.",
+      "expected_output": "Diagnoses the time-zone clash and gives the safe fix without altering the challan.",
+      "files": [],
+      "expectations": [
+        "Identifies the clash between a payment after midnight IST and a session still on the previous date",
+        "Says never to change the challan date",
+        "Gives the fixes: start a new session, wait, or switch the computer to IST"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I'm an NRI and my only Indian income is about ₹3 lakh of equity fund gains plus some fixed-deposit interest. Why is the portal showing so much tax? Did I make a mistake?",
+      "expected_output": "Explains the non-resident rules that produce the tax, and checks fund classification, instead of assuming a filing error.",
+      "files": [],
+      "expectations": [
+        "Explains that a non-resident's unused basic exemption cannot absorb special-rate capital gains",
+        "Explains non-residents get no 87A rebate",
+        "Applies the ₹1.25 lakh 112A exemption only to equity-oriented gains",
+        "Checks whether any funds are international or non-equity, taxed under section 112 without the exemption",
+        "Checks the portal's figure against its own computation and says plainly whether there is an error"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I need my mutual fund capital gains statement for FY 2025-26 to file. Where do I get it?",
+      "expected_output": "Points to MF Central first, with the broker Tax P&L and AIS as cross-checks, not an email hunt.",
+      "files": [],
+      "expectations": [
+        "Recommends MF Central first (PAN plus OTP, one statement covering CAMS and KFintech funds)",
+        "Mentions the broker's Tax P&L for directly held shares",
+        "Mentions reconciling against AIS",
+        "Does not start by searching the person's email for statements",
+        "Does not send the person to CAMS and KFintech separately as the first step"
+      ]
+    }
+  ]
+}

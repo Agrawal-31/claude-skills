@@ -1,0 +1,87 @@
+{
+  "skill_name": "uk-personal-tax",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I moved to the UK about three years ago and work for a UK employer. In 2025-26 I spent roughly 12 working days in France and Canada, and my employer's HR system records travel days. Can I claim anything for those days, and do I need to file?",
+      "expected_output": "An eligibility check for Overseas Workday Relief and the filing obligation, using the person's estimate and employer log rather than reconstructing trips from email.",
+      "files": [],
+      "expectations": [
+        "Asks for or uses the person's estimate of workdays abroad and the employer's travel/attendance log",
+        "Does not search the mailbox or calendar for flight tickets to rebuild trip dates",
+        "Checks OWR eligibility conditions, including arrival date and residence history",
+        "Explains that the claim needs a Self Assessment return with the SA109 pages",
+        "States that HMRC's free online service cannot file SA109, so commercial software, paper or an agent is needed",
+        "Mentions the 5 October registration deadline for a first return",
+        "Uses scripts/uk_tax_calc.py (owr or income-tax) for any figure"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "My salary this year is about £140k and my tax code has been 1257L all year. Will I owe HMRC money?",
+      "expected_output": "Identifies the personal allowance taper and the resulting underpayment, with a computed figure and options to reduce it.",
+      "files": [],
+      "expectations": [
+        "Explains the personal allowance is fully tapered away above £125,140",
+        "Estimates the underpayment at around 45% of £12,570 (about £5,657) using the script",
+        "Asks only for details that change the answer (other income, pension contributions, benefits)",
+        "Mentions pension contributions or Gift Aid as ways to restore allowance",
+        "Labels the figures with the tax year"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I made about £900 of crypto gains with about £20k of proceeds this year. The tax app I used didn't put them on the return. Should I complain to them?",
+      "expected_output": "Checks the current reporting triggers before suggesting any complaint, and asks for the preparer's workings.",
+      "files": [],
+      "expectations": [
+        "States the current reporting trigger (for example proceeds over £50,000 or gains over the annual exempt amount) from rates-and-thresholds.md",
+        "Does not use the out-of-date '4 x annual exempt amount' test",
+        "Concludes from the trigger whether reporting is required",
+        "Advises asking the preparer for their workings before challenging them",
+        "Does not draft an accusatory complaint as a first step"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I'm leaving the UK for good in August and I think I've overpaid tax. Can I get it back before the year ends?",
+      "expected_output": "The fastest refund route for a mid-year leaver, and whether P85 or a return is the right vehicle.",
+      "files": [],
+      "expectations": [
+        "Explains updating estimated income in the HMRC app so the tax code changes before the final payslip",
+        "Explains that the final payslip can refund tax paid year to date",
+        "Explains when P85 applies, and that it is wrong if a return will be filed anyway",
+        "Raises split-year treatment for the year of departure",
+        "Computes the expected refund with scripts/uk_tax_calc.py paye"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I sold some Indian mutual funds this tax year with gains of about ₹2.5 lakh. How do they go on my UK return?",
+      "expected_output": "UK treatment as offshore income gains, the right SA106 boxes, sterling conversion, credit for Indian tax, and the FIG comparison where relevant.",
+      "files": [],
+      "expectations": [
+        "Identifies Indian mutual funds as usually non-reporting offshore funds, taxed as income, not capital gains",
+        "Points to SA106 offshore income gains (box 56)",
+        "Converts to sterling with a stated exchange-rate source",
+        "Limits foreign tax credit to Indian tax plus cess, not interest or fees",
+        "Says to confirm the chosen software supports the needed boxes before paying for it",
+        "Hands the Indian-return side to the india-income-tax skill"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Help me do my 2025-26 Self Assessment. Everything's in this Drive folder: P60, payslips and my bank's interest statement.",
+      "expected_output": "Reads the whole folder, reconciles payslips to the P60, asks only the questions that change a box, and produces a box-by-box worksheet.",
+      "files": [],
+      "expectations": [
+        "Reads the whole folder, including subfolders, before asking for anything",
+        "Reconciles payslips to the P60 (pay, tax, NI)",
+        "Asks remaining questions in one short batch, limited to ones that change a box",
+        "Produces a box-by-box worksheet with source documents",
+        "Lists the income sections to enable in the filing software before giving field values",
+        "Offers to save the outputs into the year folder's Return/"
+      ]
+    }
+  ]
+}

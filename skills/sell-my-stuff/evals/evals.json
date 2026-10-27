@@ -1,0 +1,88 @@
+{
+  "skill_name": "sell-my-stuff",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm moving out at the end of next month and want to sell everything I can. I've got Gmail and an Outlook account connected. Go through both and find everything I've bought in the last 5 years that's worth selling.",
+      "expected_output": "An exhaustive first-pass inventory across both mailboxes, built sender by sender, with ownership checks and a selection sheet the person can mark up.",
+      "files": [],
+      "expectations": [
+        "Agrees scope before or while starting: time window, exclusions (consumables, items in another country), and whose items count",
+        "Confirms which account each mail connector is actually reading",
+        "Enumerates order emails by sender with pagination, not only product-keyword searches",
+        "Checks more than one Amazon marketplace domain (for example .co.uk, .de, .com, .in)",
+        "Covers non-electronics categories such as furniture, homeware, sports kit and bags",
+        "Flags returned, refunded or cancelled orders instead of listing them as owned",
+        "Produces a selection sheet with a blank SELL? column",
+        "Reports coverage (mailbox, sender, date range, pages read) so gaps are visible",
+        "Does not describe an unchecked search as 'nothing found'"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What should I list my 249 g camera drone for on eBay? It's about three years old, flown most weekends, and comes with three batteries, the controller and a carry bag.",
+      "expected_output": "An ask price and a floor backed by sold-price evidence, capped by the current new price, with the legal note on drone registration.",
+      "files": [],
+      "expectations": [
+        "Bases the price on recent sold prices (eBay's in-form recommended price or sold listings), not asking prices alone",
+        "Checks the current new price as a ceiling",
+        "Gives both an ask price and a floor",
+        "Prices for the actual kit (three batteries, controller, bag) and its heavier use",
+        "States the UK rule that a Flyer ID is needed from 100 g (from 1 Jan 2026) and tells the agent or person to re-check current rules",
+        "Does not claim a sub-250 g drone needs no registration"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm logged in to eBay and Vinted in Chrome. The photos are in ~/Downloads/sale. Make listings for the coffee grinder and the running jacket.",
+      "expected_output": "Drafts saved in the person's signed-in Chrome, with cleaned photos and nothing published.",
+      "files": [],
+      "expectations": [
+        "Uses Claude in Chrome, where the person is signed in, not an unsigned built-in browser pane",
+        "Strips photo metadata and blurs serials or personal details before upload",
+        "Writes a copy-paste listing pack before driving the browser",
+        "Saves drafts only and does not publish without an explicit yes for that action",
+        "Sets the eBay item location to an area, not the full home postcode",
+        "Verifies form fields by reading their values, not only from a screenshot"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Two Vinted buyers, two parcels, and I think I swapped the contents. Both were dropped at a parcel locker an hour ago. What do I do?",
+      "expected_output": "An immediate, ordered plan that tries to stop the parcel, protects the order and goes through Vinted's support route.",
+      "files": [],
+      "expectations": [
+        "First tries to stop or retrieve the parcels before the courier collection",
+        "Advises messaging the buyer not to confirm receipt",
+        "Gives the Vinted support route for the order",
+        "Does not claim the existing shipping label can be reused for the correct item",
+        "Offers a ready-to-send buyer message"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Make a page I can share with colleagues showing what I'm selling, plus a short post for our workplace sale group. Prices are in my sheet.",
+      "expected_output": "A buyer-facing page and post that match the sheet, keep the person's colleague prices, and carry item facts only.",
+      "files": [],
+      "expectations": [
+        "Uses the sheet as the source of truth and keeps its prices",
+        "Does not raise colleague prices to match public-market prices without asking",
+        "Leaves personal context off the page (moving plans, destination, addresses, prices paid, order numbers)",
+        "Shows reserved and sold items as such",
+        "Lists items in the post rather than only giving a count"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I've sold a desk lamp, a pair of football boots and a coffee grinder. What box sizes should I buy, and which ones go as a small parcel?",
+      "expected_output": "A per-item box plan from real product dimensions plus padding, checked against the carrier size and weight bands.",
+      "files": [],
+      "expectations": [
+        "Looks up or asks for each item's real dimensions and weight",
+        "Adds padding allowance and checks fit (for example with scripts/parcel_fit.py)",
+        "Maps each parcel to a carrier size and weight band",
+        "Tells the person to re-check current carrier limits"
+      ]
+    }
+  ]
+}

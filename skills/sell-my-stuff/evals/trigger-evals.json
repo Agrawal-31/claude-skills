@@ -1,0 +1,20 @@
+[
+  {"query": "I've bought loads of stuff over the years. Can you go through my email and work out what I could sell on eBay?", "should_trigger": true},
+  {"query": "what's my old Kindle worth second hand?", "should_trigger": true},
+  {"query": "Write me a Vinted listing for this rain jacket, photos attached", "should_trigger": true},
+  {"query": "I'm moving out next month, help me declutter and sell what I can", "should_trigger": true},
+  {"query": "I sent the wrong item to a Vinted buyer, help!", "should_trigger": true},
+  {"query": "What size box do I need to post a table lamp and a pair of trainers?", "should_trigger": true},
+  {"query": "can you make a page for my office sale group with photos and prices", "should_trigger": true},
+  {"query": "A buyer on eBay offered £65 for my £90 headphones. Should I accept and what do I say?", "should_trigger": true},
+  {"query": "Keep a spreadsheet of what I've listed, what's sold and what I still need to post", "should_trigger": true},
+  {"query": "Should I sell my old phone on eBay or to a buyback site?", "should_trigger": true},
+  {"query": "Find me a cheap second-hand camera on eBay under £150", "should_trigger": false},
+  {"query": "Write a product description for my Shopify store's new candle range", "should_trigger": false},
+  {"query": "Track my Amazon order that hasn't arrived", "should_trigger": false},
+  {"query": "How do I return an item I bought on Vinted?", "should_trigger": false},
+  {"query": "Build me a Python scraper for eBay sold prices for a market research project", "should_trigger": false},
+  {"query": "Summarise my spending on Amazon this year for budgeting", "should_trigger": false},
+  {"query": "Do I have to pay tax on my side business selling handmade jewellery?", "should_trigger": false},
+  {"query": "Help me write an eBay seller policy and returns page for my business", "should_trigger": false}
+]

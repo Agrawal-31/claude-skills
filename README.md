@@ -31,6 +31,15 @@ On older versions, add the marketplace once, then install by name:
 **claude.ai:** download a skill folder as a zip and upload it under
 Settings → Capabilities → Skills.
 
+## Tests
+
+Each skill has an `evals/` folder:
+
+- `evals.json`: realistic task prompts, each with checkable expectations. Many come from mistakes made in real sessions, so a regression shows up (for example, an agent searching the inbox for flight tickets instead of asking for an estimate of days abroad).
+- `trigger-evals.json`: prompts that should and should not load the skill, for tuning its description.
+
+Run them with the skill-creator skill (`/plugin install skill-creator@claude-plugins-official`).
+
 Tax skills are guidance, not professional advice; see each skill's `DISCLAIMER.md`.
 
 ## License
